@@ -1,3 +1,1 @@
-console.log('hi cicd new 1
-            
-bla bla bla
+console.log('hi cicd new 2');
