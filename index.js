@@ -5,7 +5,7 @@ const port = process.env.PORT || 8080;
 
 
 app.get("/", async (req, res) => {
-  res.json({ status: "hi procamp" });
+  res.json({ status: "hi procamp team" });
 });
 
 

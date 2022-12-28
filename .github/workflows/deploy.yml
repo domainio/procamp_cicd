@@ -25,29 +25,16 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
     - run: npm run lint
-    
+
   deploy:
     needs: [build]
     name: Deploy to Google Cloud
     runs-on: ubuntu-latest
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    steps:      
       - uses: actions/checkout@v2
-       # Set up authentication to google cloud via the service account       
-      # - uses: google-github-actions/setup-gcloud@v1
-     # - uses: google-github-actions/deploy-appengine@v1
-        # with:
-        #   credentials: ${{ secrets.GCP_CREDENTIALS }}
-        #   export_default_credentials: true
       - uses: 'google-github-actions/auth@v1'
         with:
           credentials_json: ${{ secrets.GCP_CREDENTIALS }}        
       - uses: google-github-actions/deploy-appengine@v1
         with:
-          credentials_json: $GCP_CREDENTIALS
-      # - name: Install node dependencies
-      #   run: npm ci
-      # - name: Deploy to google cloud
-      #   run: |
-      #     gcloud config set project turing-reach-373012
-      #     gcloud app deploy deploy.yaml --quiet          
+          credentials_json: $GCP_CREDENTIALS   
