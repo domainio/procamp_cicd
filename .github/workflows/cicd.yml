@@ -3,9 +3,9 @@
 name: CICD Nodejs app to Google App Engine
 on:
   push:
-    branches: [ main ]
+    branches: [ main, domainio-new-app ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, domainio-new-app ]
     
 jobs:
 
