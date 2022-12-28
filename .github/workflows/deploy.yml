@@ -18,9 +18,12 @@ jobs:
         # with:
         #   credentials: ${{ secrets.GCP_CREDENTIALS }}
         #   export_default_credentials: true
+      - uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}        
       - uses: google-github-actions/deploy-appengine@v1
         with:
-          credentials: ${{ secrets.GCP_CREDENTIALS }}
+          credentials_json: $GCP_CREDENTIALS
       # - name: Install node dependencies
       #   run: npm ci
       # - name: Deploy to google cloud
