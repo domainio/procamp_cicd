@@ -3,9 +3,9 @@
 name: CICD Nodejs app to Google App Engine
 on:
   push:
-    branches: [ main, domainio-new-app ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, domainio-new-app ]
+    branches: [ main ]
     
 jobs:
 
@@ -30,7 +30,7 @@ jobs:
 
   deploy:
     needs: [build]
-    if: github.ref == 'refs/heads/main'
+    #if: github.ref == 'refs/heads/main'
     name: Deploy to Google Cloud
     runs-on: ubuntu-latest
     steps:      
