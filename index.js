@@ -4,9 +4,8 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 8080;
 
-app.use((req, res, next) => {
-  console.log("hello from yakov sinwani");
-  next();
+app.get("/yakov", (req, res, next) => {
+  res.status(200).send("procamp best team!!!")
 });
 app.get("/", async (req, res) => {
   res.json({ status: "hi procamp team" });
