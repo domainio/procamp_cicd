@@ -1,4 +1,3 @@
-
 const express = require('express');
 
 const app = express();
@@ -24,7 +23,6 @@ app.listen(port, () => {
   console.log(`App listening on port ${port} 🐙`);
 });
 
-console.log('hi cicd erez pr2');
+console.log('hi ci⚡️cd');
 console.log("Yakov");
 console.log("LIHI");
-
