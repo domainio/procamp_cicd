@@ -23,6 +23,7 @@ app.listen(port, () => {
   console.log(`App listening on port ${port} 🐙`);
 });
 
+console.log('hi ci⚡️cd 🐙');
 console.log('hi cicd erez pr2');
 console.log("Yakov");
 console.log("LIHI");
