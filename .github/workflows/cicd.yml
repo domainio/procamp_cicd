@@ -28,16 +28,4 @@ jobs:
     - run: npm test
     - run: npm run lint
 
-  deploy:
-    needs: [build]
-    #if: github.ref == 'refs/heads/main'
-    name: Deploy to Google Cloud
-    runs-on: ubuntu-latest
-    steps:      
-      - uses: actions/checkout@v2
-      - uses: 'google-github-actions/auth@v1'
-        with:
-          credentials_json: ${{ secrets.GCP_CREDENTIALS }}        
-      - uses: google-github-actions/deploy-appengine@v1
-        with:
-          credentials_json: $GCP_CREDENTIALS   
+   
